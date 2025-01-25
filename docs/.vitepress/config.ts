@@ -15,25 +15,17 @@ export default defineConfig({
         text: 'Mods',
         items: [
           { text: 'Defaulted', link: '/defaulted' },
-          { text: 'Atlas Core', link: '/core' }
+          { text: 'Atlas Core', link: '/core/intro' }
         ]
       }
     ],
 
     sidebar: {
-      '/defaulted/': [
-        {
-          text: "Defaulted",
-          items: [
-            { text: 'Usage', link: '/defaulted' }
-          ]
-        }
-      ],
       '/core/': [
         {
           text: "Atlas Core",
           items: [
-            { text: 'Introduction', link: '/core' }
+            { text: 'Introduction', link: '/core/intro' }
           ]
         }
       ]
