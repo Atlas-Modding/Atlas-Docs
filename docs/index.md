@@ -11,5 +11,5 @@ hero:
       link: /defaulted
     - theme: brand
       text: Atlas Core
-      link: /core
+      link: /core/intro
 ---
