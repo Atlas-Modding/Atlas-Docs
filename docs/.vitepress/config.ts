@@ -6,23 +6,37 @@ export default defineConfig({
   title: 'Atlas Development',
   description: 'Development team for Minecraft mods.',
   base: `/Atlas-Docs/`,
+  lastUpdated: true,
 
   themeConfig: {
+    logo: `/logo.png`,
     nav: [
       {
         text: 'Mods',
         items: [
-          { text: 'Defaulted', link: '/defaulted' }
+          { text: 'Defaulted', link: '/defaulted' },
+          { text: 'Atlas Core', link: '/core' }
         ]
       }
     ],
 
-    sidebar: [
-      {
-        items: [
-          { text: 'Defaulted Usage', link: '/defaulted' }
-        ]
-      }
-    ]
+    sidebar: {
+      '/defaulted/': [
+        {
+          text: "Defaulted",
+          items: [
+            { text: 'Usage', link: '/defaulted' }
+          ]
+        }
+      ],
+      '/core/': [
+        {
+          text: "Atlas Core",
+          items: [
+            { text: 'Introduction', link: '/core' }
+          ]
+        }
+      ]
+    }
   }
 });

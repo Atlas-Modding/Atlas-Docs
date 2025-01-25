@@ -9,4 +9,7 @@ hero:
     - theme: brand
       text: Defaulted
       link: /defaulted
+    - theme: brand
+      text: Atlas Core
+      link: /core
 ---
