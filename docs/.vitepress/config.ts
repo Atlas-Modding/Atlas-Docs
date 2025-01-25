@@ -5,7 +5,7 @@ export default defineConfig({
   lang: 'en-US',
   title: 'Atlas Development',
   description: 'Development team for Minecraft mods.',
-  base: /Atlas-Docs/
+  base: /Atlas-Docs/,
 
   themeConfig: {
     nav: [
