@@ -3,7 +3,7 @@ name: Default Component Patches Registry
 ---
 
 # Introduction to Default Component Patches
-The JSON files for the defaulted:default_component_patches registry should be put in `data/<namespace>/defaulted/default_component_patches/<path>.json`.
+The JSON files for the `defaulted:default_component_patches` registry should be put in `data/<namespace>/defaulted/default_component_patches/<path>.json`.
 
 :::details Extra Registry Information {open}
 All changes for the registry will be applied alphabetically, namespace before path.
