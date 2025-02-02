@@ -26,7 +26,8 @@ import { data as posts } from './blog/blog.data.js'
   <ul>
     <li v-for="post of posts">
       <a :href="post.url">{{ post.frontmatter.title }}</a>
-      <span>by {{ post.frontmatter.author }}</span>
+      <span style="font-size: 16px;"> by {{ post.frontmatter.author }}</span>
+      <br>
       <span>{{ post.frontmatter.desc }}</span>
     </li>
   </ul>
