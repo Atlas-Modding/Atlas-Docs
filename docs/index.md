@@ -17,7 +17,7 @@ hero:
 ***
 
 <script setup>
-import { data as posts } from './blog/blog.data.js'
+import { data as posts } from './blog/blog.data.ts'
 </script>
 
 <template>
