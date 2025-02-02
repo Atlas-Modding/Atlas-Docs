@@ -1,6 +1,7 @@
 ---
 title: Combatify & Defaulted Version 1.2.6 and 1.1.0
 author: Alexandra (Rae)
+desc: Combatify Items Config update (many things get removed) and how to get around that.
 date: 2/03/2025
 ---
 ## Current Issues With the Items Config and Why Most Gets Cut
