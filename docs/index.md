@@ -26,8 +26,7 @@ import { data as posts } from './blog/blog.data.ts'
   <p v-for="post of posts">
     <a :href="post.url">{{ post.title }}</a>
     <span style="font-size: 16px;"> by {{ post.author }} on {{ post.date.string }}</span>
-    <br>
-    <div style="font-size: 22px;">{{ post.excerpt }}</div>
+    <div style="font-size: 22px;"><br>{{ post.excerpt }}</div>
     <hr>
   </p>
 </template>
