@@ -27,7 +27,7 @@ import { data as posts } from './blog/blog.data.ts'
     <a :href="post.url">{{ post.title }}</a>
     <span style="font-size: 16px;"> by {{ post.author }} on {{ post.date.string }}</span>
     <br>
-    <span style="font-size: 22px;">{{ post.excerpt }}</span>
+    <div style="font-size: 22px;">{{ post.excerpt }}</div>
     <hr>
   </p>
 </template>
