@@ -23,12 +23,11 @@ import { data as posts } from './blog/blog.data.ts'
 <template>
   <h1>Updates & Development Progress</h1>
   <hr>
-  <ul>
-    <li v-for="post of posts">
-      <a :href="post.url">{{ post.title }}</a>
-      <span style="font-size: 16px;"> by {{ post.author }} on {{ post.date.string }}</span>
-      <br>
-      <span style="font-size: 22px;">{{ post.excerpt }}</span>
-    </li>
-  </ul>
+  <p v-for="post of posts">
+    <a :href="post.url">{{ post.title }}</a>
+    <span style="font-size: 16px;"> by {{ post.author }} on {{ post.date.string }}</span>
+    <br>
+    <span style="font-size: 22px;">{{ post.excerpt }}</span>
+    <hr>
+  </p>
 </template>
