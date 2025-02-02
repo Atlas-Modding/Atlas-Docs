@@ -13,3 +13,21 @@ hero:
       text: Atlas Core
       link: /core/intro
 ---
+
+***
+
+<script setup>
+import { data as posts } from './blog/blog.data.js'
+</script>
+
+<template>
+  <h1>Updates & Development Progress</h1>
+  <hr>
+  <ul>
+    <li v-for="post of posts">
+      <a :href="post.url">{{ post.frontmatter.title }}</a>
+      <span>by {{ post.frontmatter.author }}</span>
+      <span>{{ post.frontmatter.desc }}</span>
+    </li>
+  </ul>
+</template>
