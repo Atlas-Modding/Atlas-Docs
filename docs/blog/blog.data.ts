@@ -3,7 +3,6 @@ import { createContentLoader } from 'vitepress'
 interface Post {
   title: string
   author: string
-  desc: string
   url: string
   date: {
     time: number
@@ -16,6 +15,7 @@ declare const data: Post[]
 export { data }
 
 export default createContentLoader('/blog/*.md', {
+  excerpt: true,
   transform(raw): Post[] {
     return raw
       .map(({ url, frontmatter, excerpt }) => ({

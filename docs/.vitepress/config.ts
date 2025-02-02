@@ -6,6 +6,7 @@ export default defineConfig({
   title: 'Atlas Development',
   description: 'Development team for Minecraft mods.',
   base: `/Atlas-Docs/`,
+  cleanUrls: true,
   lastUpdated: true,
 
   themeConfig: {
