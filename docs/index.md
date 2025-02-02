@@ -28,7 +28,7 @@ import { data as posts } from './blog/blog.data.js'
       <a :href="post.url">{{ post.frontmatter.title }}</a>
       <span style="font-size: 16px;"> by {{ post.frontmatter.author }}</span>
       <br>
-      <span>{{ post.frontmatter.desc }}</span>
+      <span style="font-size: 26px;">{{ post.frontmatter.desc }}</span>
     </li>
   </ul>
 </template>
