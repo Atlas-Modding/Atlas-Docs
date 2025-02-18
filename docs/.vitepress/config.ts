@@ -34,7 +34,8 @@ export default defineConfig({
         {
           text: "Defaulted",
           items: [
-            { text: 'Introduction', link: '/defaulted/intro' }
+            { text: 'Introduction to Default Component Patches', link: '/defaulted/intro' },
+            { text: 'Patch Ordering', link: '/defaulted/ordering' }
           ]
         }
       ]

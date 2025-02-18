@@ -1,17 +1,11 @@
 ---
-name: Default Component Patches Registry
+name: Default Component Patches
 ---
 
 # Introduction to Default Component Patches
-The JSON files for the `defaulted:default_component_patches` registry should be put in `data/<namespace>/defaulted/default_component_patches/<path>.json`.
+The JSON files for the `defaulted:default_component_patches` data should be put in `data/<namespace>/defaulted/default_component_patches/<path>.json`.
 
-:::details Extra Registry Information {open}
-All changes for the registry will be applied alphabetically, namespace before path.
-
-For example, `custom:patches` (which would be located in `data/custom/defaulted/default_component_patches/patches.json`) would apply after `custom:amazing_patches`, but before `d:amazing_patches`.
-
-This should be kept in mind for how different datapacks utilising this system could interact.
-:::
+For information on how patches are applied, see [ordering information](./ordering).
 
 ## Creating a File
 
