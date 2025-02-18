@@ -35,7 +35,13 @@ export default defineConfig({
           text: "Defaulted",
           items: [
             { text: 'Introduction to Default Component Patches', link: '/defaulted/intro' },
-            { text: 'Patch Ordering', link: '/defaulted/ordering' }
+            { text: 'Patch Ordering', link: '/defaulted/ordering' },
+            {
+              text: "Patch Generators",
+              items: [
+                { text: 'Introduction to Patch Generators', link: '/defaulted/patch-gens/introducing-patch-gens' }
+              ]
+            }
           ]
         }
       ]

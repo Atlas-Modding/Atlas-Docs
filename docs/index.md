@@ -18,6 +18,7 @@ hero:
 
 <script setup>
 import { data as posts } from './blog/blog.data.ts'
+import paths from './index.paths.js'
 </script>
 
 <template>
