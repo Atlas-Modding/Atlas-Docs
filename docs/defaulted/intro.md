@@ -74,24 +74,24 @@ This component patch will apply to every single item that exists.
 That is fine if you want to make a global change, but remember that in this exemple we wanted to only apply it to certain items.
 
 From this point, I will introduce the next element:
-The `items` and `tag` fields.
+The `items` and `tags` fields.
 
 1. `items` defines a set of registered, existing items to apply the patch to.
-2. `tag` defines a list of item tags to apply the patch to.
+2. `tags` defines a list of item tags to apply the patch to.
 
 :::details {open}
 If both are absent, the patch is global, or rather, applies to every item that exists.
 
-Either `items` or `tag` can be absent, items which are patched depend solely on if the item is in the `items` set or is within a tag in the `tag` list.
+Either `items` or `tags` can be absent, items which are patched depend solely on if the item is in the `items` set or is within a tag in the `tags` list.
 
-If both are present, then any item within either `items` or `tag` will be patched, so including items which are within a tag which is defined, is generally redundant.
+If both are present, then any item within either `items` or `tags` will be patched, so including items which are within a tag which is defined, is generally redundant.
 :::
 
 For our example, let's say we want every sword to get this blocking component:
 
 ```json{2-4}
 {
-  "tag": [
+  "tags": [
     "minecraft:swords"
   ],
   "patch": {
@@ -127,7 +127,7 @@ The addition to make this occur, is as follows:
   "items": [
     "minecraft:totem_of_undying"
   ],
-  "tag": [
+  "tags": [
     "minecraft:swords"
   ],
   "patch": {
@@ -161,7 +161,7 @@ Ignoring the frivolity of such an idea, here is how you would do that:
   "items": [
     "minecraft:wooden_axe"
   ],
-  "tag": [
+  "tags": [
     "minecraft:pickaxes"
   ],
   "patch": {
