@@ -3,7 +3,7 @@ title: Combatify & Defaulted Version 1.2.6 and 1.1.0
 author: Alexandra (Rae)
 date: 2/03/2025
 ---
-## Current Issues With the Items Config and Why Most Gets Cut
+# Current Issues With the Items Config and Why Most Gets Cut
 
 Currently the Items Config is great, it does its job and does it well.
 However, the Items Config has one big flaw: it goes way too far out of scope.
@@ -14,11 +14,11 @@ Put simply, why should the Items Config be the only place you can easily edit a 
 
 That's part of why Defaulted should pick up the slack, and why Combatify will rely on it from now on.
 
-## Defaulted Patch Generators: An Introduction...
+# Defaulted Patch Generators: An Introduction...
 
 In order to achieve the most fluid migration, as well as for in general utility to improve modification of items without the use of Combatify, Patch Generators are going to be added, alongside Tool Material Wrappers.
 
-### Preface
+## Preface
 
 The concept is simple: in Defaulted, the user currently has complete control over the patch, which is fine and dandy, and will not change.
 
@@ -33,15 +33,15 @@ Another Example: Adding a Default Enchantment
 
 If, for some reason, you wanted an item to have a default enchantment, but others also added different enchantments (and perhaps you'd like to combine them), well, you can only do that if you ***KNOW*** the existing enchantment map.
 
-### The Solution
+## The Solution
 
 Patch Generators are a mod-defined registry that exist to provide control over existing components *or* generate new ones, based off of information provided to the generator.
 
 These can be used to conditionally edit patches, add default patches, etc. with ease.
 
-However, what about different tiers of the same tool, used for defining components like `enchantable`, `repairable`, `max_damage`, `tool`, and `attribute_modifiers`? There is no reason that tiers should inherently require different files, so long as we have a way to identify which is which.
+However, what about different tool materials of the same tool, used for defining components like `enchantable`, `repairable`, `max_damage`, `tool`, and `attribute_modifiers`? There is no reason that different tool materials should inherently require different files, so long as we have a way to identify which is which.
 
-#### Tool Material Wrappers
+### Tool Material Wrappers
 
 This is a simple idea: allow the user to give items a tool material wrapper, and that wrapper is used by other Patch Gens...
 However, it still is complex enough to require a full statement.
