@@ -38,6 +38,7 @@ export default defineConfig({
             { text: 'Patch Ordering', link: '/defaulted/ordering' },
             {
               text: "Patch Generators",
+              collapsed: false,
               items: [
                 { text: 'Introduction to Patch Generators', link: '/defaulted/patch-gens/introducing-patch-gens' }
               ]
