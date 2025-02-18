@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Defaulted
-      link: /defaulted
+      link: /defaulted/intro
     - theme: brand
       text: Atlas Core
       link: /core/intro
@@ -29,7 +29,6 @@ paths()
   <p v-for="post of posts">
     <a :href="post.url">{{ post.title }}</a>
     <span style="font-size: 16px;"> by {{ post.author }} on {{ post.date.string }}</span>
-    <div style="font-size: 22px;"><br>{{ post.excerpt }}</div>
     <hr>
   </p>
 </template>
