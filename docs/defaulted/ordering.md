@@ -1,6 +1,7 @@
 ---
 name: Patch Application Ordering
 ---
+# Patch Ordering
 Inside of the patch file, there is a field called `priority`, which in general controls ordering of the patches.
 > [!NOTE]
 > Priority is 1000 if not specified.
