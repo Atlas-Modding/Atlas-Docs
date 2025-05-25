@@ -22,7 +22,7 @@ export default createContentLoader('/blog/*.md', {
         title: frontmatter.title,
         author: frontmatter.author,
         desc: frontmatter.desc,
-        url,
+        url: '/Atlas-Docs' + url,
         excerpt,
         date: formatDate(frontmatter.date)
       }))
