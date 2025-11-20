@@ -1,11 +1,14 @@
 ---
-name: Vanilla Weapon Stats Generator
+name: Combat Test Weapon Stats Generator
 ---
 
 # Weapon Statistics Modification and You
 
 First off, let's define what this generator is, and does. 
-The primary purpose of this generator is for modifying weapon stats in a vanilla-expected manner.
+The primary purpose of this generator is for modifying weapon stats in a combat-test-expected manner.
+
+> [!NOTE]
+> This patch generator ONLY EXISTS with Combatify installed.
 
 This will produce a `minecraft:attribute_modifiers` component.
 
@@ -17,7 +20,7 @@ The following is an introduction to how to use it:
     ...
     "patch_generators": [
         {
-            "generator": "defaulted:vanilla_weapon_stats",
+            "generator": "defaulted:combat_test_weapon_stats",
             ...
         }
     ]
@@ -30,7 +33,7 @@ First off, mark whether it should maintain the previous attribute modifiers on t
 
 This is defined with a boolean with the name `persist_previous`.
 
-If you wish to add damage or speed, you may add `attack_damage` or `attack_speed`. This may be stated as a weapon-level-based value, see [here](#weapon-level-based).
+If you wish to add damage, speed, or reach, you may add `attack_damage`, `attack_speed`, or `attack_reach`. This may be stated as a weapon-level-based value, see [here](./weapon-stats#weapon-level-based).
 
 Note that the level passed in to the weapon-level-based value will be either the `weapon_level` for the tier of the weapon (3 if not otherwise associated with a tier) or the tier's `speed_level` (used only for speed, if in versions past 1.21.9, will be 4 if no tier is associated, otherwise matching `weapon_level`).
 
@@ -42,7 +45,7 @@ Below is an example of both damage and speed:
     ...
     "patch_generators": [
         {
-            "generator": "defaulted:vanilla_weapon_stats",
+            "generator": "defaulted:combat_test_weapon_stats",
             "attack_damage": 2,
             "attack_speed": {
                 "values": [
@@ -77,6 +80,10 @@ Below is an example of both damage and speed:
                 },
                 "type": "lookup"
             },
+            "attack_reach": {
+                "base": 0,
+                "per_level_above_first": 0.25
+            },
             "persist_previous": false
         }
     ]
@@ -89,19 +96,4 @@ In addition, one might control the attack damage bonus of the tier applying to t
 
 Additional modifiers can be added using vanilla formatting under `additional_modifiers`.
 
-The ids for the damage and speed modifiers can be overridden with `damage_id_override` and `speed_id_override` respectively.
-
-<a id="weapon-level-based"></a>
-## Weapon-Level-Based Values
-
-If in object form, requires field `type`. Can have the following values, `constant`, `lookup`, and `linear`
-    * Constant has the following fields:
-        1. `value`: A floating-point value.
-        2. `applies_additional`: Whether to apply a bonus provided to it, tier damage in the case of attack damage, 0 otherwise.
-    * Lookup has the following fields:
-        1. `values`: A list of level-matching conditions, which themselves are an object with two fields: a weapon-level-based value of name `value` (taking the same form seen here), and a level condition named `condition`, of a `type` either `clamped`, which takes an integer `min` and integer `max`, and will be satisfied for all numbers between the two (inclusive), or a type `list`, which is a list of accepted levels to match.
-        2. `fallback`: A weapon-level-based value which will be used in the case no value matches.
-    * Linear has the following fields:
-        1. `base`: A weapon-level-based value which will be the base.
-        2. `per_level_above_first`: The weapon-level-based value to add to the base for each level above the first.
-All weapon-level-based values mentioned above can either be in object form or as a single floating-point value resolving to a constant.
+The ids for the damage, speed, and reach modifiers can be overridden with `damage_id_override`, `speed_id_override`, and `reach_id_override` respectively.
