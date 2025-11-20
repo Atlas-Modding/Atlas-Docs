@@ -91,8 +91,8 @@ Additional modifiers can be added using vanilla formatting under `additional_mod
 
 The ids for the damage and speed modifiers can be overridden with `damage_id_override` and `speed_id_override` respectively.
 
-<a id="weapon-level-based">
-#### Weapon-Level-Based Values
+<a id="weapon-level-based"></a>
+## Weapon-Level-Based Values
 
 If in object form, requires field `type`. Can have the following values, `constant`, `lookup`, and `linear`
     * Constant has the following fields:
