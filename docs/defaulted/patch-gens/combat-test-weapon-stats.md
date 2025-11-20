@@ -11,23 +11,9 @@ The primary purpose of this generator is for modifying weapon stats in a combat-
 > This patch generator ONLY EXISTS with Combatify installed.
 
 This will produce a `minecraft:attribute_modifiers` component.
+This generator has the id `defaulted:combat_test_weapon_stats`.
 
 The following is an introduction to how to use it:
-
-:::details Pseudocode 
-```json
-{
-    ...
-    "patch_generators": [
-        {
-            "generator": "defaulted:combat_test_weapon_stats",
-            ...
-        }
-    ]
-    ...
-}
-```
-:::
 
 First off, mark whether it should maintain the previous attribute modifiers on top of its new ones.
 

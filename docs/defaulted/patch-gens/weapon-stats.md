@@ -8,23 +8,9 @@ First off, let's define what this generator is, and does.
 The primary purpose of this generator is for modifying weapon stats in a vanilla-expected manner.
 
 This will produce a `minecraft:attribute_modifiers` component.
+This generator has the id `defaulted:vanilla_weapon_stats`.
 
 The following is an introduction to how to use it:
-
-:::details Pseudocode 
-```json
-{
-    ...
-    "patch_generators": [
-        {
-            "generator": "defaulted:vanilla_weapon_stats",
-            ...
-        }
-    ]
-    ...
-}
-```
-:::
 
 First off, mark whether it should maintain the previous attribute modifiers on top of its new ones.
 
@@ -95,13 +81,13 @@ The ids for the damage and speed modifiers can be overridden with `damage_id_ove
 ## Weapon-Level-Based Values
 
 If in object form, requires field `type`. Can have the following values, `constant`, `lookup`, and `linear`
-    * Constant has the following fields:
-        1. `value`: A floating-point value.
-        2. `applies_additional`: Whether to apply a bonus provided to it, tier damage in the case of attack damage, 0 otherwise.
-    * Lookup has the following fields:
-        1. `values`: A list of level-matching conditions, which themselves are an object with two fields: a weapon-level-based value of name `value` (taking the same form seen here), and a level condition named `condition`, of a `type` either `clamped`, which takes an integer `min` and integer `max`, and will be satisfied for all numbers between the two (inclusive), or a type `list`, which is a list of accepted levels to match.
-        2. `fallback`: A weapon-level-based value which will be used in the case no value matches.
-    * Linear has the following fields:
-        1. `base`: A weapon-level-based value which will be the base.
-        2. `per_level_above_first`: The weapon-level-based value to add to the base for each level above the first.
+* Constant has the following fields:
+    1. `value`: A floating-point value.
+    2. `applies_additional`: Whether to apply a bonus provided to it, tier damage in the case of attack damage, 0 otherwise.
+* Lookup has the following fields:
+    1. `values`: A list of level-matching conditions, which themselves are an object with two fields: a weapon-level-based value of name `value` (taking the same form seen here), and a level condition named `condition`, of a `type` either `clamped`, which takes an integer `min` and integer `max`, and will be satisfied for all numbers between the two (inclusive), or a type `list`, which is a list of accepted levels to match.
+    2. `fallback`: A weapon-level-based value which will be used in the case no value matches.
+* Linear has the following fields:
+    1. `base`: A weapon-level-based value which will be the base.
+    2. `per_level_above_first`: The weapon-level-based value to add to the base for each level above the first.
 All weapon-level-based values mentioned above can either be in object form or as a single floating-point value resolving to a constant.
