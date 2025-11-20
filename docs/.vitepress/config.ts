@@ -40,7 +40,8 @@ export default defineConfig({
               text: "Patch Generators",
               collapsed: false,
               items: [
-                { text: 'Introduction to Patch Generators', link: '/defaulted/patch-gens/introducing-patch-gens' }
+                { text: 'Introduction to Patch Generators', link: '/defaulted/patch-gens/introducing-patch-gens' },
+                { text: `Vanilla Weapon Stats Generator`, link: '/defaulted/patch-gens/weapon-stats'}
               ]
             }
           ]
