@@ -16,11 +16,16 @@ First off, mark whether it should maintain the previous attribute modifiers on t
 
 This is defined with a boolean with the name `persist_previous`.
 
-In addition, there are four fields which this generator will take:
+In addition, there are five fields which this generator will take:
 1. `max_damage`: The durability of the item, taking the form of an [armor variable](#armor-variable) of type integer.
 2. `armor`: The armor of the item, taking the form of an [armor variable](#armor-variable) of type integer.
 3. `armor_toughness`: The armor toughness of the item, taking the form of an [armor variable](#armor-variable) of type double.
 4. `knockback_resistance`: The knockback resistance of the item, taking the form of an [armor variable](#armor-variable) of type double.
+5. `additional_modifiers`: A list of armor attribute entries, which will be used to form additional attribute modifiers for the item. These are of the format:
+    - `type`: The attribute to modify, can be any vanilla or modded attribute.
+    - `base_id`: The base identifier for this modifier, will be automatically suffixed with .helmet, .chestplate, .leggings, .boots, .body, or .any, depending on the piece.
+    - `amount`: The value of the attribute, taking the form of an [armor variable](#armor-variable) of type double.
+    - `operation`: The operation for the attribute modifier.
 
 <a id="armor-variable"></a>
 ## Armor Variable Codecs

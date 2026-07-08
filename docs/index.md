@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Defaulted
-      link: /defaulted/intro
+      link: /defaulted/item-intro
     - theme: brand
       text: Atlas Core
       link: /core/intro

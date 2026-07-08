@@ -68,25 +68,20 @@ This component patch will apply to every single item that exists.
 That is fine if you want to make a global change, but remember that in this exemple we wanted to only apply it to certain items.
 
 From this point, I will introduce the next element:
-The `items` and `tags` fields.
-
-1. `items` defines a set of registered, existing items to apply the patch to.
-2. `tags` defines a list of item tags to apply the patch to.
+The `elements` field, which defines a list of either registered, existing items or tags prefixed with # to apply the patch to.
 
 :::details {open}
-If both are absent, the patch is global, or rather, applies to every item that exists.
+If the `elements` field is empty or absent, the patch is global, or rather, applies to every item that exists.
 
-Either `items` or `tags` can be absent, items which are patched depend solely on if the item is in the `items` set or is within a tag in the `tags` list.
-
-If both are present, then any item within either `items` or `tags` will be patched, so including items which are within a tag which is defined, is generally redundant.
+Any item which is either in the items directly included in `elements` or is in a tag included in `elements` will be patched.
 :::
 
 For our example, let's say we want every sword to get this blocking component:
 
 ```json{2-4}
 {
-  "tags": [
-    "minecraft:swords"
+  "elements": [
+    "#minecraft:swords"
   ],
   "patch": {
     "minecraft:blocks_attacks": {
@@ -116,13 +111,11 @@ However, just to not implant false ideas, let's say we also wanted Totems of Und
 
 The addition to make this occur, is as follows:
 
-```json{2-4}
+```json{3}
 {
-  "items": [
-    "minecraft:totem_of_undying"
-  ],
-  "tags": [
-    "minecraft:swords"
+  "elements": [
+    "minecraft:totem_of_undying",
+    "#minecraft:swords"
   ],
   "patch": {
     "minecraft:blocks_attacks": {
@@ -152,11 +145,9 @@ Now, what if you wanted to, say, remove the attribute modifiers from, say, a woo
 Ignoring the frivolity of such an idea, here is how you would do that:
 ```json
 {
-  "items": [
-    "minecraft:wooden_axe"
-  ],
-  "tags": [
-    "minecraft:pickaxes"
+  "elements": [
+    "minecraft:wooden_axe",
+    "#minecraft:pickaxes"
   ],
   "patch": {
     "!minecraft:attribute_modifiers": {}
